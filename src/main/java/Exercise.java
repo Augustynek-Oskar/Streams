@@ -28,7 +28,8 @@ public class Exercise {
         pizzaMenu.add(Id8);
         pizzaMenu.add(Id9);
         pizzaMenu.add(Id10);
-        hasVegetarianPizzaWithPaprikaAndTomato(pizzaMenu);
+
+        doAllContainMozarella(pizzaMenu);
     }
     public static void showVegetarian(List<Pizza> menu){
         menu.stream()
@@ -48,5 +49,11 @@ public class Exercise {
 
         System.out.println(result);
      return result;
+    }
+    public static boolean doAllContainMozarella(List<Pizza> menu){
+        boolean result =
+                menu.stream().allMatch(pizza -> pizza.getIngredients().contains("mozarella"));
+        System.out.println(result);
+        return result;
     }
 }
