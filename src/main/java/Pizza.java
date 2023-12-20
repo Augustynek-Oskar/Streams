@@ -3,14 +3,14 @@ import java.util.List;
 public class Pizza {
     private String name;
     private int kcal;
-    private boolean vegan;
+    private boolean vegetarian;
     private List<String> ingredients;
     //Dostępne składniki to: mozarella, pieczarki, salami, cebula, pomidor, papryka, seler
 
-    public Pizza(String name, int kcal, boolean vegan, List<String> ingredients) {
+    public Pizza(String name, int kcal, boolean vegetarian, List<String> ingredients) {
         this.name = name;
         this.kcal = kcal;
-        this.vegan = vegan;
+        this.vegetarian = vegetarian;
         this.ingredients = ingredients;
     }
 
@@ -22,8 +22,8 @@ public class Pizza {
         return kcal;
     }
 
-    public boolean isVegan() {
-        return vegan;
+    public boolean isVegetarian() {
+        return vegetarian;
     }
 
     public List<String> getIngredients() {
