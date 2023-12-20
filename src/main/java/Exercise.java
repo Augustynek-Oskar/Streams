@@ -29,13 +29,23 @@ public class Exercise {
         pizzaMenu.add(Id9);
         pizzaMenu.add(Id10);
 
-        showVegetarian(pizzaMenu);
-
+getVegeWithPaprikaAndTomato(pizzaMenu);
     }
     public static void showVegetarian(List<Pizza> menu){
         menu.stream()
                 .filter(pizza -> pizza.isVegetarian())
                 .forEach(pizza -> System.out.println(pizza.getName()));
     }
-
+    public static void showPossibleAllergens(List<Pizza> menu){
+        menu.stream()
+                .filter(pizza -> pizza.getIngredients().contains("seler"))
+                .forEach(pizza -> System.out.println(pizza.getName()));
+    }
+    public static void getVegeWithPaprikaAndTomato(List<Pizza> menu){
+        menu.stream()
+                .filter(pizza -> pizza.isVegetarian())
+                .filter(pizza -> pizza.getIngredients().contains("pomidor"))
+                .filter(pizza -> pizza.getIngredients().contains("papryka"))
+                .forEach(pizza -> System.out.println(pizza.getName()));
+    }
 }
