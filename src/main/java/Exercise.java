@@ -1,7 +1,6 @@
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Exercise {
 
@@ -29,7 +28,7 @@ public class Exercise {
         pizzaMenu.add(Id9);
         pizzaMenu.add(Id10);
 
-        doAllContainMozarella(pizzaMenu);
+        showHighestCaloriesPizza(pizzaMenu);
     }
     public static void showVegetarian(List<Pizza> menu){
         menu.stream()
@@ -55,5 +54,14 @@ public class Exercise {
                 menu.stream().allMatch(pizza -> pizza.getIngredients().contains("mozarella"));
         System.out.println(result);
         return result;
+    }
+    public static String showHighestCaloriesPizza(List<Pizza> menu){
+
+        String pizzaName = menu.stream()
+                .max(Comparator.comparing(Pizza::getKcal))
+                .map(Pizza::getName)
+                .orElse(null);
+        System.out.println(pizzaName);
+        return pizzaName;
     }
 }
