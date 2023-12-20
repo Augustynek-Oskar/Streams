@@ -29,4 +29,14 @@ public class Pizza {
     public List<String> getIngredients() {
         return ingredients;
     }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "name='" + name + '\'' +
+                ", kcal=" + kcal +
+                ", vegetarian=" + vegetarian +
+                ", ingredients=" + ingredients +
+                '}';
+    }
 }
