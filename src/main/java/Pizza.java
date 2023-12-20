@@ -30,13 +30,4 @@ public class Pizza {
         return ingredients;
     }
 
-    @Override
-    public String toString() {
-        return "Pizza{" +
-                "name='" + name + '\'' +
-                ", kcal=" + kcal +
-                ", vegetarian=" + vegetarian +
-                ", ingredients=" + ingredients +
-                '}';
-    }
 }

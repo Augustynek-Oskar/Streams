@@ -28,8 +28,7 @@ public class Exercise {
         pizzaMenu.add(Id8);
         pizzaMenu.add(Id9);
         pizzaMenu.add(Id10);
-
-getVegeWithPaprikaAndTomato(pizzaMenu);
+        hasVegetarianPizzaWithPaprikaAndTomato(pizzaMenu);
     }
     public static void showVegetarian(List<Pizza> menu){
         menu.stream()
@@ -41,11 +40,13 @@ getVegeWithPaprikaAndTomato(pizzaMenu);
                 .filter(pizza -> pizza.getIngredients().contains("seler"))
                 .forEach(pizza -> System.out.println(pizza.getName()));
     }
-    public static void getVegeWithPaprikaAndTomato(List<Pizza> menu){
-        menu.stream()
-                .filter(pizza -> pizza.isVegetarian())
-                .filter(pizza -> pizza.getIngredients().contains("pomidor"))
-                .filter(pizza -> pizza.getIngredients().contains("papryka"))
-                .forEach(pizza -> System.out.println(pizza.getName()));
+    public static boolean hasVegetarianPizzaWithPaprikaAndTomato(List<Pizza> menu){
+        boolean result = menu.stream()
+                .anyMatch(pizza -> pizza.isVegetarian() &&
+                        pizza.getIngredients().contains("papryka") &&
+                        pizza.getIngredients().contains("pomidor"));
+
+        System.out.println(result);
+     return result;
     }
 }
