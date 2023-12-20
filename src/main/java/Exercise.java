@@ -28,7 +28,7 @@ public class Exercise {
         pizzaMenu.add(Id9);
         pizzaMenu.add(Id10);
 
-        showHighestCaloriesPizza(pizzaMenu);
+        showLowestCaloriesPizza(pizzaMenu);
     }
     public static void showVegetarian(List<Pizza> menu){
         menu.stream()
@@ -59,6 +59,14 @@ public class Exercise {
 
         String pizzaName = menu.stream()
                 .max(Comparator.comparing(Pizza::getKcal))
+                .map(Pizza::getName)
+                .orElse(null);
+        System.out.println(pizzaName);
+        return pizzaName;
+    }
+    public static String showLowestCaloriesPizza(List<Pizza> menu){
+        String pizzaName = menu.stream()
+                .min(Comparator.comparing(Pizza::getKcal))
                 .map(Pizza::getName)
                 .orElse(null);
         System.out.println(pizzaName);
