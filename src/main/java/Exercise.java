@@ -1,5 +1,7 @@
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Exercise {
 
@@ -12,8 +14,8 @@ public class Exercise {
         Pizza Id6 = new Pizza("Wegetariańska", 681, true, List.of("pomidor","cebula","pieczarki","mozarella", "seler", "papryka"));
         Pizza Id7 = new Pizza("Napoletana", 1423, false, List.of("salami", "papryka", "pomidor", "pieczarki"));
         Pizza Id8 = new Pizza("Włoska", 959, true, List.of("pomidor","mozarella", "papryka"));
-        Pizza Id9 = new Pizza("Amerykańska", 1345, true, List.of("salami", "pieczarki", "cebula"));
-        Pizza Id10 = new Pizza("Polska", 1060, true, List.of("seler", "papryka", "cebula", "salami", "pieczarki", "pomidor"));
+        Pizza Id9 = new Pizza("Amerykańska", 1345, false, List.of("salami", "pieczarki", "cebula"));
+        Pizza Id10 = new Pizza("Polska", 1060, false, List.of("seler", "papryka", "cebula", "salami", "pieczarki", "pomidor"));
 
         List <Pizza>pizzaMenu = new LinkedList<>();
         pizzaMenu.add(Id1);
@@ -27,6 +29,13 @@ public class Exercise {
         pizzaMenu.add(Id9);
         pizzaMenu.add(Id10);
 
+        showVegetarian(pizzaMenu);
+
+    }
+    public static void showVegetarian(List<Pizza> menu){
+        menu.stream()
+                .filter(pizza -> pizza.isVegetarian())
+                .forEach(pizza -> System.out.println(pizza.getName()));
     }
 
 }
