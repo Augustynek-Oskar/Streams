@@ -28,6 +28,16 @@ public class Exercise {
         pizzaMenu.add(Id9);
         pizzaMenu.add(Id10);
 
+        showVegetarian(pizzaMenu);
+
+        showPossibleAllergens(pizzaMenu);
+
+        hasVegetarianPizzaWithPaprikaAndTomato(pizzaMenu);
+
+        doAllContainMozarella(pizzaMenu);
+
+        showHighestCaloriesPizza(pizzaMenu);
+
         showLowestCaloriesPizza(pizzaMenu);
     }
     public static void showVegetarian(List<Pizza> menu){
