@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Exercise {
     public static void main(String[] args) {
@@ -20,6 +21,12 @@ public class Exercise {
             System.out.println(rooms);
         }
 
-
+    }
+    public static Long getNumberOfTwoDimensionRooms(List<CinemaHall> list){
+        Long D2type = list.stream()
+                .filter(room -> room.getType().equals(RoomDimensionType.type_2D))
+                .count();
+        System.out.println("Number of 2D rooms is: " + D2type);
+        return D2type;
     }
 }
