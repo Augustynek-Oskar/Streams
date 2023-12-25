@@ -29,4 +29,18 @@ public class Exercise {
         System.out.println("Number of 2D rooms is: " + D2type);
         return D2type;
     }
+    public static Long getNumberOfThreeDimensionRooms(List<CinemaHall> list){
+        Long D3type = list.stream()
+                .filter(room -> room.getType().equals(RoomDimensionType.type_3D))
+                .count();
+        System.out.println("Number of 3D rooms is: " + D3type);
+        return D3type;
+    }
+    public static Long getNumberOfFourDimensionRooms(List<CinemaHall> list){
+        Long D4type = list.stream()
+                .filter(room -> room.getType().equals(RoomDimensionType.type_4D))
+                .count();
+        System.out.println("Number of 4D rooms is: " + D4type);
+        return D4type;
+    }
 }
