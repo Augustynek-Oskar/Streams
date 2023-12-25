@@ -21,6 +21,7 @@ public class Exercise {
             System.out.println(rooms);
         }
 
+        getNumberOfRoomTypes(cinema);
     }
     public static Long getNumberOfTwoDimensionRooms(List<CinemaHall> list){
         Long D2type = list.stream()
@@ -42,5 +43,10 @@ public class Exercise {
                 .count();
         System.out.println("Number of 4D rooms is: " + D4type);
         return D4type;
+    }
+    public static void getNumberOfRoomTypes(List<CinemaHall> list){
+        getNumberOfTwoDimensionRooms(list);
+        getNumberOfThreeDimensionRooms(list);
+        getNumberOfFourDimensionRooms(list);
     }
 }
