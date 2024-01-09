@@ -1,5 +1,5 @@
 public enum RoomDimensionType {
-    type_2D,
-    type_3D,
-    type_4D
+    TYPE_2D,
+    TYPE_3D,
+    TYPE_4D
 }
